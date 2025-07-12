@@ -1,13 +1,33 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  --header-bg: #ffffff;
+  --sidebar-bg: #2e3235;
+  --sub-sidebar-bg: #ffffff;
+  --footer-bg: #ffffff;
+
+  --header-db: #e4e4e4;
+  --sub-sidebar-db: #d9d9d9;
+  --footer-db: #e4e5e6;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+[data-theme="dark"] {
+  --background: #1d1e1f;
+  --foreground: #ededed;
+
+  --header-bg: #1d1e1f;
+  --sidebar-bg: #2c2d2f;
+  --sub-sidebar-bg: #1d1e1f;
+  --footer-bg: #1f1f1f;
+
+  --header-db: #070707;
+  --sub-sidebar-db: #2c2d2f;
+  --footer-db: #2c2d2f;
+}
+
+[data-theme="dark"] .svg {
+  filter: invert(99%) sepia(99%) saturate(0%) hue-rotate(225deg) brightness(106%) contrast(100%);
 }
 
 html,
@@ -19,9 +39,11 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'Inter', 'Pretendard', sans-serif;
+  font-size: 15px;
+  letter-spacing: -0.2px;
 }
 
 * {
@@ -35,8 +57,17 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+/* font */
+@font-face {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/Pretendard-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/Rubik-VariableFont_wght.woff') format('woff');
 }
