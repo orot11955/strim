@@ -81,6 +81,7 @@ export default function MenuTree({ data, depth = 0, parentPath = '' }) {
                 />
               )}
               <span>{item.title}</span>
+              {isSelected ? <div style={{color: '#188c3b', fontWeight: 'bolder'}}>&lt;</div> : <></>}
             </div>
 
             {hasChildren && isOpen && (
