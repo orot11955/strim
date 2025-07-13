@@ -40,6 +40,7 @@
 .menu-item {
   cursor: pointer;
   display: flex;
+  font-weight: bolder;
   align-items: center;
   gap: 6px;
   transition: 0.2s ease;
@@ -57,11 +58,11 @@
 .menu-item.selected {
   background-color: #eaeaea;
   color: black;
-  font-weight: 600;
+  font-weight: bolder;
   border-radius: 4px;
   transition: background-color 0.2s ease;
   display: flex;
-  gap: 10px;
+  gap: 7px;
 }
 
 .menu-tree {
@@ -86,7 +87,7 @@
 }
 
 .sns-button:hover {
-  filter: invert(69%) sepia(15%) saturate(1230%) hue-rotate(89deg) brightness(96%) contrast(81%);
+  filter: invert(40%) sepia(20%) saturate(600%) hue-rotate(89deg) brightness(96%) contrast(81%);
 }
 
 .site-stats {
@@ -130,7 +131,6 @@
   pointer-events: none;
   box-sizing: border-box;
   height: 100%;
-  padding: 10px;
 }
 
 .layout-subsidebar-wrapper.show {

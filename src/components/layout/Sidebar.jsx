@@ -5,27 +5,28 @@ import SiteStats from './sidebar/SiteStats';
 
 const menuData = [
   {
-    title: 'Home',
+    title: '홈',
     path: '/'
   },
    {
-    title: 'Profile',
+    title: '프로필',
     path: '/profile'
   },
   {
-    title: 'Post',
+    title: '포스트',
     children: [
       { title: 'Spring', path: '/post/spring' },
-      { title: 'React', path: '/post/react' }
+      { title: 'React', path: '/post/react' },
+      { title: 'DB', path: '/post/db' }
     ]
   },
   {
-    title: 'Review',
+    title: '리뷰',
     path: '/post/review'
   },
   {
-    title: 'Note',
-    path: '/post'
+    title: '노트',
+    path: '/note'
   }
 ];
 

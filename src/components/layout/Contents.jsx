@@ -3,6 +3,7 @@ import CommonTitle from "../common/CommonTitle";
 
 export default function Contents({ children }) {
   const router = useRouter();
+  
   const path = router.asPath;
 
   return (

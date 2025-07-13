@@ -57,6 +57,42 @@ a {
   text-decoration: none;
 }
 
+/* 404 */
+.not-found-page {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 100px 20px;
+  font-family: "Pretendard", sans-serif;
+}
+
+.not-found-page h1 {
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+
+.not-found-page p {
+  font-size: 18px;
+  color: #777;
+  margin-bottom: 32px;
+}
+
+.back-home {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #000;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.back-home:hover {
+  background: #333;
+}
+
+/* 404 */
+
 /* font */
 @font-face {
   font-family: 'Pretendard';

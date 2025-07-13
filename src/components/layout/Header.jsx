@@ -7,7 +7,7 @@ export default function Header() {
         <div className="logo"></div>
       </div>
       <div className="header-right">
-        <img class="svg" src="/images/logo/user.svg" />
+        <img className="svg" src="/images/logo/user.svg" />
         <ThemeToggle />  
       </div>
     </div>
