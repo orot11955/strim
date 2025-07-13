@@ -223,3 +223,106 @@
   font-size: 0.875rem;
   color: #888;
 }
+
+/* mail-modal */
+/* 모달 오버레이 (배경) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* 모달 본문 */
+.modal-content {
+  background-color: #fff;
+  padding: 24px 32px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  animation: fadeInUp 0.3s ease-out;
+}
+
+/* 제목 */
+.modal-content h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* 입력 필드 */
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.modal-content input:focus,
+.modal-content textarea:focus {
+  outline: none;
+  border-color: #0070f3;
+}
+
+/* 버튼 영역 */
+.modal-content .button-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* 버튼 공통 */
+.modal-content button {
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+/* 전송 버튼 */
+.modal-content button:first-child {
+  background-color: #1a8d3e;
+  color: #fff;
+}
+
+.modal-content button:first-child:hover {
+  background-color: #155729;
+}
+
+/* 닫기 버튼 */
+.modal-content button:last-child {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.modal-content button:last-child:hover {
+  background-color: #ccc;
+}
+
+/* 간단한 애니메이션 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* mail-modal */

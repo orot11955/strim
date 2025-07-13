@@ -8,7 +8,7 @@ const menuData = [
     title: '홈',
     path: '/'
   },
-   {
+  {
     title: '프로필',
     path: '/profile'
   },
@@ -36,13 +36,13 @@ const statData = {
   comments: 23
 }
 
-export default function Sidebar() {
+export default function Sidebar({ setIsMailModalOpen }) {
   return (
     <div className="layout-sidebar">
       <div className="sidebar-top">
         <Link href="/">
           <div className="logo">
-            <div style={{color: '#188c3b', fontWeight: 'bolder'}}>&gt;</div>
+            <div style={{ color: '#188c3b', fontWeight: 'bolder' }}>&gt;</div>
             <div>orot</div>
           </div>
         </Link>
@@ -52,10 +52,10 @@ export default function Sidebar() {
       </div>
       <div className="sidebar-bottom">
         <SnsButton src={"/images/dev_logo/github.svg"} href={"https://github.com/orot11955"} />
-        <SnsButton src={"/images/dev_logo/mail.svg"} />
+        <SnsButton src={"/images/dev_logo/mail.svg"} setIsMailModalOpen={setIsMailModalOpen} />
       </div>
       <div className="sidebar-stats">
-        <SiteStats visitors={statData.visitors} posts={statData.posts} comments={statData.comments}/>
+        <SiteStats visitors={statData.visitors} posts={statData.posts} comments={statData.comments} />
       </div>
     </div>
   );

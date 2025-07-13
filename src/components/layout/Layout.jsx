@@ -4,16 +4,19 @@ import Footer from "./Footer";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 import SubSidebar from "./Subsidebar";
+import MailModal from "./MailModal";
+import { useState } from "react";
 
 export default function Layout({ children }) {
   const router = useRouter();
+  const [isMailModalOpen, setIsMailModalOpen] = useState(false);
 
   const subSidebarRoutes = ['/post'];
   const showSubSidrbar = subSidebarRoutes.some((path) => router.asPath.startsWith(path));
 
   return (
     <div className="layout-wrapper">
-      <Sidebar />
+      <Sidebar setIsMailModalOpen={setIsMailModalOpen}/>
       <div className={`layout-subsidebar-wrapper ${showSubSidrbar ? 'show' : ''}`}>
         {showSubSidrbar && <SubSidebar />}
       </div>
@@ -24,6 +27,10 @@ export default function Layout({ children }) {
         </div>
         <Footer />
       </div>
+      <MailModal
+        isOpen={isMailModalOpen}
+        onClose={() => setIsMailModalOpen(false)}
+      />
     </div>
   );
 }
