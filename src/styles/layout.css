@@ -84,6 +84,7 @@
   justify-content: space-between;
   width: 100px;
   margin: auto;
+  align-items: center;
 }
 
 .sns-button:hover {
@@ -97,7 +98,7 @@
   background: var(--card-bg, #f9f9f9);
   padding: 16px 20px;
   border-radius: 12px;
-  box-shadow: 0 0 6px rgba(0,0,0,0.05);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
   justify-content: space-between;
   align-items: center;
 }
@@ -225,7 +226,6 @@
 }
 
 /* mail-modal */
-/* 모달 오버레이 (배경) */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -239,7 +239,6 @@
   z-index: 9999;
 }
 
-/* 모달 본문 */
 .modal-content {
   background-color: #fff;
   padding: 24px 32px;
@@ -250,7 +249,6 @@
   animation: fadeInUp 0.3s ease-out;
 }
 
-/* 제목 */
 .modal-content h2 {
   margin-top: 0;
   margin-bottom: 16px;
@@ -259,7 +257,6 @@
   color: #333;
 }
 
-/* 입력 필드 */
 .modal-content input,
 .modal-content textarea {
   width: 100%;
@@ -277,14 +274,12 @@
   border-color: #0070f3;
 }
 
-/* 버튼 영역 */
 .modal-content .button-group {
   display: flex;
   justify-content: flex-end;
   gap: 10px;
 }
 
-/* 버튼 공통 */
 .modal-content button {
   padding: 8px 16px;
   font-size: 14px;
@@ -294,7 +289,6 @@
   transition: background-color 0.2s;
 }
 
-/* 전송 버튼 */
 .modal-content button:first-child {
   background-color: #1a8d3e;
   color: #fff;
@@ -304,7 +298,6 @@
   background-color: #155729;
 }
 
-/* 닫기 버튼 */
 .modal-content button:last-child {
   background-color: #e0e0e0;
   color: #333;
@@ -314,15 +307,16 @@
   background-color: #ccc;
 }
 
-/* 간단한 애니메이션 */
 @keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
 /* mail-modal */

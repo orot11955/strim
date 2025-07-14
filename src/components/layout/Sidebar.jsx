@@ -24,16 +24,12 @@ const menuData = [
     title: '리뷰',
     path: '/post/review'
   },
-  {
-    title: '노트',
-    path: '/note'
-  }
 ];
 
 const statData = {
-  visitors: 2304,
-  posts: 221,
-  comments: 23
+  visitors: 1,
+  posts: 1,
+  comments: 1
 }
 
 export default function Sidebar({ setIsMailModalOpen }) {
@@ -51,8 +47,8 @@ export default function Sidebar({ setIsMailModalOpen }) {
         <MenuTree data={menuData} />
       </div>
       <div className="sidebar-bottom">
-        <SnsButton src={"/images/dev_logo/github.svg"} href={"https://github.com/orot11955"} />
-        <SnsButton src={"/images/dev_logo/mail.svg"} setIsMailModalOpen={setIsMailModalOpen} />
+        <SnsButton size={{height: 30, width: 30}} src={"/images/dev_logo/github-mark.svg"} href={"https://github.com/orot11955"} />
+        <SnsButton size={{height: 35, width: 35}} src={"/images/dev_logo/mail.svg"} setIsMailModalOpen={setIsMailModalOpen} />
       </div>
       <div className="sidebar-stats">
         <SiteStats visitors={statData.visitors} posts={statData.posts} comments={statData.comments} />
