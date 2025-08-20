@@ -38,8 +38,7 @@ export default function Sidebar({ setIsMailModalOpen }) {
       <div className="sidebar-top">
         <Link href="/">
           <div className="logo">
-            <div style={{ color: '#188c3b', fontWeight: 'bolder' }}>&gt;</div>
-            <div>orot</div>
+            <img style={{width: 110}} src='/images/logo_y.png' />
           </div>
         </Link>
       </div>

@@ -4,8 +4,6 @@ import '@/styles/layout.css';
 import '@/styles/markdown.css';
 import '@/domains/login/login.css';
 
-import '@/styles/tiptapSimpleTemplate.css'
-
 import { useRouter } from "next/router";
 
 export default function App({ Component, pageProps }) {

@@ -20,6 +20,7 @@
 .sidebar-top {
   padding: 2px;
   display: flex;
+  justify-content: center;
   align-items: center;
   font-family: "Rubik";
 }
@@ -27,8 +28,6 @@
 .sidebar-top .logo {
   display: flex;
   gap: 5px;
-  font-size: 18px;
-  font-weight: bolder;
 }
 
 .sidebar-menu {
@@ -290,12 +289,12 @@
 }
 
 .modal-content button:first-child {
-  background-color: #1a8d3e;
+  background-color: #fe9806;
   color: #fff;
 }
 
 .modal-content button:first-child:hover {
-  background-color: #155729;
+  background-color: #c47302;
 }
 
 .modal-content button:last-child {

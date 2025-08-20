@@ -1,7 +1,7 @@
-import Markdown from "@/components/markdown/Markdown";
+import MarkdownEditor from "@/components/markdown/MarkdownEditor";
 import { useState } from "react";
 
 export default function Profile() {
   const [html, setHtml] = useState('')
-  return <Markdown onChange={setHtml} />
+  return <MarkdownEditor />
 }

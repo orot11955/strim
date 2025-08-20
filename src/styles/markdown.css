@@ -1,94 +1,60 @@
-.ProseMirror {
-  padding: 16px;
-  min-height: 400px;
-  outline: none;
-  line-height: 1.75;
-  font-size: 16px;
-  color: var(--foreground);
-  background-color: var(--background);
-  border-radius: 12px;
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+
+.app-shell { display: grid; grid-template-columns: 260px 1fr; height: 100vh; background: #111316; color: #e6e8ea; }
+.sidebar { border-right: 1px solid #1c1f24; padding: 16px; overflow: auto; background: #0d0f12; }
+.app-title { margin: 0 0 12px; font-size: 14px; color: #9aa4ad; letter-spacing: .08em; text-transform: uppercase; }
+.note-item { display: block; width: 100%; text-align: left; background: transparent; color: #cfd6dc; border: 1px solid #1c1f24; border-radius: 12px; padding: 10px 12px; margin-bottom: 8px; cursor: pointer; }
+.note-item:hover { background: #14181d; }
+
+.main { display: flex; flex-direction: column; }
+
+.editor-wrap { height: 100%; display: flex; flex-direction: column; }
+.titlebar { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-bottom: 1px solid #1c1f24; backdrop-filter: blur(4px); }
+.title-input { flex: 1; font-size: 22px; border: none; outline: none; background: transparent; color: #e6e8ea; font-weight: 600; }
+.toolbar { display: flex; gap: 8px; }
+.tool-btn { background: #13171b; color: #cfd6dc; border: 1px solid #1c1f24; border-radius: 10px; padding: 6px 10px; font-size: 13px; cursor: pointer; }
+.tool-btn.active, .tool-btn:hover { background: #1a1f25; }
+
+.editor-surface { padding: 24px 32px; overflow: auto; height: calc(100vh - 56px); }
+
+/* Tiptap document */
+.ProseMirror { outline: none; max-width: 780px; line-height: 1.6; }
+.ProseMirror p { margin: 0 0 12px; }
+.ProseMirror h1, .ProseMirror h2, .ProseMirror h3, .ProseMirror h4 { font-weight: 700; line-height: 1.25; margin: 20px 0 10px; }
+.ProseMirror h1 { font-size: 34px; }
+.ProseMirror h2 { font-size: 28px; }
+.ProseMirror h3 { font-size: 22px; }
+.ProseMirror h4 { font-size: 18px; }
+
+.ProseMirror blockquote { border-left: 3px solid #3a4047; margin: 12px 0; padding: 8px 12px; color: #b9c2c9; background: #11151a; border-radius: 8px; }
+.ProseMirror pre { background: #0f1418; border: 1px solid #1c1f24; border-radius: 12px; padding: 14px 16px; overflow: auto; }
+.ProseMirror code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; font-size: 0.92em; }
+.ProseMirror hr { border: none; border-top: 1px solid #1c1f24; margin: 24px 0; }
+
+/* Task list styles */
+ul[data-type="taskList"] { list-style: none; padding-left: 0; }
+li[data-type="taskItem"] { display: flex; align-items: flex-start; gap: 8px; margin: 6px 0; }
+li[data-type="taskItem"] > label { margin-right: 8px; }
+li[data-type="taskItem"] > div { flex: 1; }
+
+/* Placeholder */
+.ProseMirror p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: #6c7680;
+  pointer-events: none;
+  height: 0;
 }
 
-/* 헤더 */
-.ProseMirror h1 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin: 1.5em 0 0.5em;
-}
-.ProseMirror h2 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin: 1.4em 0 0.5em;
-}
-.ProseMirror h3 {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin: 1.2em 0 0.4em;
-}
+/* Simple slash menu */
+.slash-menu { position: absolute; top: 56px; left: 320px; background: #0f1216; border: 1px solid #1c1f24; border-radius: 12px; padding: 8px; display: none; z-index: 20; }
+.slash-menu button { display: block; width: 180px; background: transparent; border: none; color: #d1d7dd; padding: 8px 10px; text-align: left; border-radius: 8px; }
+.slash-menu button:hover { background: #14181d; }
 
-/* 단락 */
-.ProseMirror p {
-  margin: 0.6em 0;
-}
+/* Images */
+.ProseMirror img { max-width: 100%; border-radius: 12px; border: 1px solid #1c1f24; }
 
-/* 리스트 */
-.ProseMirror ul {
-  padding-left: 1.5rem;
-  list-style: disc;
-  margin: 0.6em 0;
-}
-.ProseMirror ol {
-  padding-left: 1.5rem;
-  list-style: decimal;
-  margin: 0.6em 0;
-}
-.ProseMirror li {
-  margin: 0.2em 0;
-}
-
-/* 굵게, 기울임 */
-.ProseMirror strong {
-  font-weight: bold;
-}
-.ProseMirror em {
-  font-style: italic;
-}
-
-/* 블록 인용 */
-.ProseMirror blockquote {
-  border-left: 3px solid #ccc;
-  padding-left: 1rem;
-  margin-left: 0;
-  color: #555;
-  font-style: italic;
-}
-
-/* 코드 */
-.ProseMirror pre {
-  background: var(--code-bg);
-  padding: 12px;
-  border-radius: 8px;
-  font-family: 'Fira Code', monospace;
-  font-size: 14px;
-  overflow-x: auto;
-}
-.ProseMirror code {
-  background-color: var(--code-bg);
-  border-radius: 4px;
-  padding: 2px 4px;
-  font-family: 'Fira Code', monospace;
-  font-size: 14px;
-}
-
-/* 이미지 */
-.ProseMirror img {
-  max-width: 100%;
-  border-radius: 8px;
-  margin: 1em 0;
-}
-
-/* 커서 포커스 시 테두리 효과 */
-/*
-.ProseMirror:focus {
-  box-shadow: 0 0 0 2px #0080ff30;
-} */
+/* Links */
+.ProseMirror a { color: #8ab4ff; text-decoration: none; }
+.ProseMirror a:hover { text-decoration: underline; }
